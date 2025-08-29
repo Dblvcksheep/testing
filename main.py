@@ -1,7 +1,7 @@
 from datetime import date
 from http import HTTPStatus
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from flask import Flask, abort, render_template, redirect, url_for, flash, request
 from flask_bootstrap import Bootstrap5
 from flask_ckeditor import CKEditor
