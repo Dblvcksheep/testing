@@ -1,6 +1,7 @@
 from datetime import date
 from http import HTTPStatus
-
+import os
+from dotenv import load_dotenv
 from flask import Flask, abort, render_template, redirect, url_for, flash, request
 from flask_bootstrap import Bootstrap5
 from flask_ckeditor import CKEditor
@@ -31,7 +32,8 @@ This will install the packages from the requirements.txt for this project.
 '''
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'your secret key(can be anything)'
+load_dotenv()
+app.config['SECRET_KEY'] = os.environ["Flask_key"]
 ckeditor = CKEditor(app)
 Bootstrap5(app)
 
@@ -249,4 +251,4 @@ def contact():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5002)
+    app.run(debug=False, port=5002)
